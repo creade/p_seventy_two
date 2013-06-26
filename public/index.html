@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>p_seventy_two</title>
+  </head>
+    <body>
+    	<style>
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.land {
+  fill: #000;
+}
+
+.boundary {
+  fill: none;
+  stroke: #000;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.gauge {
+  width: 400px;
+  height: 200px;
+  display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  padding-left:2px; 
+  padding-right:2px;
+  -webkit-border-radius: 5px;
+  background-image: -webkit-linear-gradient(top, #000000, #333333, #000000);
+   display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.controls {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+  <div class="controls">
+    <div id="gg1" class="gauge"></div>
+    <div id="slider">
+      <input id="slide" type="range" min="-50" max="120" step=".1" value="72" data-bind="value: temp"/>
+    </div>
+  </div>
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  
+	<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+  <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/justgage.js"></script>
+       <script type="text/javascript">
+        $(document).ready(function () {
+            p_72.controllers.index().initialize();
+        });
+    </script>
+  </body>
+</html>

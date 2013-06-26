@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  latlon: 
+  jan: 9.99
+  feb: 9.99
+  mar: 9.99
+  apr: 9.99
+  may: 9.99
+  jun: 9.99
+  jul: 9.99
+  aug: 9.99
+  sep: 9.99
+  oct: 9.99
+  nov: 9.99
+  dec: 9.99
+  place_name: MyString
+
+two:
+  name: MyString
+  latlon: 
+  jan: 9.99
+  feb: 9.99
+  mar: 9.99
+  apr: 9.99
+  may: 9.99
+  jun: 9.99
+  jul: 9.99
+  aug: 9.99
+  sep: 9.99
+  oct: 9.99
+  nov: 9.99
+  dec: 9.99
+  place_name: MyString

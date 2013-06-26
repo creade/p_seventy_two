@@ -1,0 +1,12 @@
+results @temps do |temp|
+	month temp.keys[0].to_s
+	station temp.values do |station|
+		name station.place_name
+		id station.id
+		lat station.latlon.lat
+		lon station.latlon.lon
+		tmp station[temp.keys[0].to_s]
+	end
+end
+
+	
