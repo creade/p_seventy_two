@@ -33,6 +33,7 @@ p_72.controllers.index = function () {
                  .attr("width", this.width)
                  .attr("height", this.height)
                  .append("g")
+                 .attr("id", "container")
                  .attr("transform", "translate(" + this.width / 2 + "," + this.height / 2 + ")")
                  .call(this.zoom);
 
@@ -88,6 +89,27 @@ p_72.controllers.index = function () {
                                 dr = Math.sqrt(dx * dx + dy * dy);
                             return "M" + source[0] + "," + source[1] + "A" + dr + "," + dr + " 0 0,1 " + target[0] + "," + target[1];
                         })
+
+                    var bounds = viewModel.svg.select("#streams")[0][0].getBBox();
+
+                    var lowerLeft = [bounds.x , bounds.y ];
+                    var upperRight = [bounds.x + bounds.width, bounds.y + bounds.height];
+
+                    var b = [lowerLeft, upperRight];
+
+                    // viewModel.g.append("rect")
+                    //     .attr("x", upperRight[0])
+                    //     .attr("y", upperRight[1])
+                    //     .attr("width", upperRight[0] - lowerLeft[0])
+                    //     .attr("height", upperRight[1] - lowerLeft[1])
+                    //     .attr("fill", "green");
+
+
+
+                    viewModel.g.transition().duration(750).attr("transform",
+                        "translate(" + viewModel.projection.translate() + ")"
+                        + "scale(" + .95 / Math.max((b[1][0] - b[0][0]) / viewModel.width, (b[1][1] - b[0][1]) / viewModel.height) + ")"
+                        + "translate(" + -(b[1][0] + b[0][0]) / 2 + "," + -(b[1][1] + b[0][1]) / 2 + ")");
                 });
             },
 
