@@ -6,7 +6,6 @@ results @temps do |temp|
 		lat station.latlon.lat
 		lon station.latlon.lon
 		tmp station[temp.keys[0].to_s]
+		month temp.keys[0].to_s
 	end
 end
-
-	
